@@ -1,38 +1,53 @@
-.App {
-  text-align: center;
+/* Layout */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px; /* Body copy */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Responsive Design */
+@media (max-width: 375px) {
+  /* Styles specific for mobile view (375px) */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@media (min-width: 1440px) {
+  /* Styles specific for desktop view (1440px) */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Colors */
+:root {
+  /* Primary Colors */
+  --marine-blue: hsl(213, 96%, 18%);
+  --purplish-blue: hsl(243, 100%, 62%);
+  --pastel-blue: hsl(228, 100%, 84%);
+  --light-blue: hsl(206, 94%, 87%);
+  --strawberry-red: hsl(354, 84%, 57%);
+
+  /* Neutral Colors */
+  --cool-gray: hsl(231, 11%, 63%);
+  --light-gray: hsl(229, 24%, 87%);
+  --magnolia: hsl(217, 100%, 97%);
+  --alabaster: hsl(231, 100%, 99%);
+  --white: hsl(0, 0%, 100%);
 }
 
-.App-link {
-  color: #61dafb;
+/* Typography */
+body,
+p {
+  font-weight: 400; /* Regular text */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700; /* Headings */
+}
+
+strong {
+  font-weight: 500; /* Semi-bold text */
 }
