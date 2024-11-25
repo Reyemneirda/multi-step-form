@@ -31,7 +31,8 @@ const Button: React.FC<IButton> = (props) => {
     <button
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onFocus={() => setIsFocused(false)}
+      onFocus={() => setIsFocused(true)}
+      onBlur={() => setIsFocused(false)}
       onClick={onclick}
       style={getStyles()}
     >

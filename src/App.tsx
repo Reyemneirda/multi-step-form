@@ -1,14 +1,17 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router";
 import "./App.css";
-import { Home } from "./pages";
-
+import { Home, TasksManager } from "./pages";
+import { ThemeProvider } from "./ThemeProvider";
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <ThemeProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/tasks" element={<TasksManager />} />
+        </Routes>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }

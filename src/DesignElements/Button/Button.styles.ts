@@ -18,6 +18,9 @@ export const buttonStyles: IButtonStyles = {
     color: "#fff",
     backgroundColor: "rgb(2, 41, 90)",
     border: "1px solid #007bff",
+    borderWidth: "1px",
+    borderStyle: "solid",
+    borderColor: "#007bff",
     borderRadius: "0.25rem",
     cursor: "pointer",
     transition:
