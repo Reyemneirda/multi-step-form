@@ -5,10 +5,12 @@ export interface IButtonStyles {
   hover: React.CSSProperties;
   focus: React.CSSProperties;
   disabled: React.CSSProperties;
+  small: React.CSSProperties;
 }
 
 export const buttonStyles: IButtonStyles = {
   base: {
+    margin: "0.2rem",
     display: "inline-block",
     padding: "0.5rem 1rem",
     fontSize: "1rem",
@@ -39,5 +41,10 @@ export const buttonStyles: IButtonStyles = {
     borderColor: "#6c757d",
     cursor: "not-allowed",
     opacity: 0.65,
+  },
+  small: {
+    padding: "0rem 0.5rem",
+    fontSize: "0.5rem",
+    fontWeight: 400,
   },
 };

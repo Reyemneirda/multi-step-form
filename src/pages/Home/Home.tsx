@@ -11,8 +11,8 @@ export const Home: React.FC = () => {
       </header>
       <main>
         <div>
-          <Button label="Subscribe" />
-          <Button label="Task Manager" onclick={() => navigate("/tasks")} />
+          <Button>Subscribe</Button>
+          <Button onClick={() => navigate("/tasks")}>Task Manager</Button>
         </div>
       </main>
     </div>

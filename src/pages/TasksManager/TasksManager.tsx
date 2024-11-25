@@ -1,5 +1,6 @@
 import React from "react";
 import { taskReducer } from "./TasksManager.reducer";
+import Button from "../../DesignElements/Button/Button";
 
 export const TasksManager: React.FC = () => {
   const [tasks, dispatch] = React.useReducer(taskReducer, []);
@@ -50,16 +51,24 @@ export const TasksManager: React.FC = () => {
               <span
                 style={{
                   textDecoration: task.completed ? "line-through" : "none",
+                  marginRight: 20,
                 }}
                 onClick={() => dispatch({ type: "TOGGLE", payload: task.id })}
               >
                 {task.title}
               </span>
-              <button
+              <Button
+                onClick={() => dispatch({ type: "TOGGLE", payload: task.id })}
+                size="small"
+              >
+                Complete
+              </Button>
+              <Button
                 onClick={() => dispatch({ type: "DELETE", payload: task.id })}
+                size="small"
               >
                 Delete
-              </button>
+              </Button>
             </li>
           ))}
         </ul>

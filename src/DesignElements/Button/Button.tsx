@@ -1,18 +1,28 @@
-import React, { useState } from "react";
+import React, { PropsWithChildren, useState } from "react";
 import { buttonStyles } from "./Button.styles";
-interface IButton {
-  label?: string;
+interface IButton extends PropsWithChildren {
   disabled?: boolean;
-  onclick?: () => void;
+  onClick?: () => void;
+  children?: string;
+  size?: "small" | "normal";
 }
 const Button: React.FC<IButton> = (props) => {
-  const { label = "Click", disabled = false, onclick } = props;
+  const {
+    children: label = "Click",
+    disabled = false,
+    onClick: onclick,
+    size,
+  } = props;
 
   const [isHovered, setIsHovered] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
 
   const getStyles = (): React.CSSProperties => {
     let styles = { ...buttonStyles.base };
+
+    if (size === "small") {
+      styles = { ...styles, ...buttonStyles.small };
+    }
     if (isHovered && !disabled) {
       styles = { ...styles, ...buttonStyles.hover };
     }

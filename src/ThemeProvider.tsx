@@ -13,23 +13,28 @@ export const ThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <button onClick={toggleTheme}>Toggle Theme</button>
-      {location.pathname !== "/" && <button onClick={back}>Back</button>}
-
       <div
         style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          minHeight: "100vh",
-          textAlign: "center",
           backgroundColor:
             theme === "light" ? "#bfe2fd" : "hsl(228, 100%, 84%)",
           color: theme === "light" ? "#000" : "#fff",
           transition: "background-color 0.3s ease",
         }}
       >
-        {children}
+        <button onClick={toggleTheme}>Toggle Theme</button>
+        {location.pathname !== "/" && <button onClick={back}>Back</button>}
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            minHeight: "100vh",
+            textAlign: "center",
+          }}
+        >
+          {children}
+        </div>
       </div>
     </ThemeContext.Provider>
   );
